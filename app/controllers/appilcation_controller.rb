@@ -12,5 +12,10 @@ class ApplicationController < Sinatra::Base
 		"Hello world!"
 	end
 
+	# helpers do
+		
+
+	# end
+
 
 end
