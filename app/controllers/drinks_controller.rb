@@ -4,4 +4,12 @@ class DrinksController < ApplicationController
 		
 	end
 
+
+	post '/drinks' do
+
+	end
+
+
+	
+
 end

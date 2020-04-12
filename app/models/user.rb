@@ -1,3 +1,4 @@
+require_relative '../models/concerns/slugifiable.rb'
 class User < ActiveRecord::Base
 	extend Slugifiable::ClassMethods
 	include Slugifiable::InstanceMethods

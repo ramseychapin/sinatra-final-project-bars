@@ -1,3 +1,4 @@
+require_relative '../models/concerns/slugifiable.rb'
 class Bar < ActiveRecord::Base
 	extend Slugifiable::ClassMethods
 	include Slugifiable::InstanceMethods
