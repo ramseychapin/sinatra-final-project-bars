@@ -1,3 +1,5 @@
+require './config/environment'
+
 class ApplicationController < Sinatra::Base
 
 	configure do
@@ -9,10 +11,17 @@ class ApplicationController < Sinatra::Base
 
 
 	get '/' do
+		# login_check("/users/:slug")
 		erb :index
 	end
 
 	helpers do
+
+		def login_check(redirect_url)
+			if !logged_in?
+				redirect redirect_url
+			end
+		end
 
 		def logged_in?
 			!!session[:user_id]
@@ -25,8 +34,5 @@ class ApplicationController < Sinatra::Base
 		def logout!
 			session.clear
 		end
-
 	end
-
-
 end
