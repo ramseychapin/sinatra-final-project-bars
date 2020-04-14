@@ -1,0 +1,11 @@
+<h1><%= @bar.name %></h1>
+
+<h2>Drinks</h2>
+<% @bar.drinks.each do |drink| %>
+	<ul>
+		<li>
+			<a href="/drinks/<%=drink.id%>"><%= drink.name %></a>
+		</li>
+	</ul>
+<% end %>
+

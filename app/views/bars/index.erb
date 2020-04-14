@@ -1,0 +1,11 @@
+<h2>Here are all of your bars!</h2>
+
+<% @bars.each do |bar| %>
+	Name: <%= bar.name %><br>
+	Address: <%= bar.address %><br>
+	<br>
+	<a href="/bars/<%=bar.id%>/edit">Edit</a>
+	<br>
+	<br>
+
+<% end %>
