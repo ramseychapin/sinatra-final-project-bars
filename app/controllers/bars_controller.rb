@@ -1,6 +1,7 @@
 class BarsController < ApplicationController
 
 	get '/bars' do
+		redirect_if_not_logged_in("/")
 		@user = User.find_by_id(session[:user_id])
 		redirect '/bars/new' if @user.bars.empty?
 		erb :'/bars/index'
@@ -8,17 +9,19 @@ class BarsController < ApplicationController
 
 	post '/bars' do
 		@bar = Bar.create(params)
-		#need to persist to user
-		redirect "/bars"
+		@user = 
+		redirect "/bars/#{@bar.id}"
 	end
 
 
 	get '/bars/new' do
+		redirect_if_not_logged_in("/")
 		erb :"/bars/new"
 	end
 
 
 	get '/bars/:id' do
+		redirect_if_not_logged_in("/")
 		@user = User.find_by_id(session[:user_id])
 		@bar = Bar.find_by_id(params[:id])
 		erb :"/bars/show"
