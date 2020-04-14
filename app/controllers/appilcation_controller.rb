@@ -11,13 +11,13 @@ class ApplicationController < Sinatra::Base
 
 
 	get '/' do
-		# login_check("/users/:slug")
+		redirect "/users/:id" if logged_in?
 		erb :index
 	end
 
 	helpers do
 
-		def login_check(redirect_url)
+		def redirect_login_check(redirect_url)
 			if !logged_in?
 				redirect redirect_url
 			end
