@@ -4,13 +4,13 @@
 	<input id="hidden" type="hidden" name="_method" value="PATCH">
 
 	<label name="bar_name">Bar Name</label>
-	<input type="text" name="name" value="<%= @bar.name %>">
+	<input type="text" name="bar[name]" value="<%= @bar.name %>">
 
 	<label name="bar_name">Bar Address</label>
-	<input type="text" name="address" value="<%= @bar.address %>">
+	<input type="text" name="bar[address]" value="<%= @bar.address %>">
 
 	<label name="bar_name">Bartender Name</label>
-	<input type="text" name="bartender_name" value="<%= @bar.bartender_name %>">
+	<input type="text" name="bar[bartender_name]" value="<%= @bar.bartender_name %>">
 
 	<input type="submit" value="Submit">
 </form>

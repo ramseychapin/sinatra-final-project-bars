@@ -8,8 +8,8 @@ class BarsController < ApplicationController
 	end
 
 	post '/bars' do
-		@bar = Bar.create(params)
-		@user = 
+		@bar = Bar.create(params[:bar])
+		@bar.drinks << Drink.create(params[:drink])
 		redirect "/bars/#{@bar.id}"
 	end
 
@@ -34,8 +34,8 @@ class BarsController < ApplicationController
 
 	patch '/bars/:id' do
 		@bar = Bar.find_by_id(params[:id])
-		@bar.update(params)
-		redirect '/bars/:id'
+		@bar.update(params[:bar])
+		redirect "/bars/#{@bar.id}"
 	end
 
 
