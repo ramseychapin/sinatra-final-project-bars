@@ -1,10 +1,14 @@
 <h1><%= @drink.name %></h1>
 
-<h2><%= @drink.bar.name %></h2>
+<h2>From the Bar: <a href="/bars/<%= @drink.bar.id %>"><%= @drink.bar.name %></a></h2>
 
-<a href="/drinks/<%=@drink.id%>/edit">Edit Drink</a>
+<h2>Ingredients: <%= @drink.ingredients %></h2>
+
+
+<a href="/drinks/<%=@drink.id%>/edit">Edit Drink</a><br>
+<a href="/bars/<%=@drink.bar.id%>">Return To Bar</a><br><br>
 
 <form action="/drinks/<%=@drink.id%>/delete" method="POST">
 	<input id="hidden" type="hidden" name="_method" value="delete">
-	<input type="submit" value="Delete Tweet">
+	<input type="submit" value="Delete Drink">
 </form>

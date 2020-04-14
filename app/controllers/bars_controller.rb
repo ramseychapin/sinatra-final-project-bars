@@ -1,7 +1,8 @@
 class BarsController < ApplicationController
 
 	get '/bars' do
-		@bars = Bar.all
+		@user = User.find_by_id(session[:user_id])
+		redirect '/bars/new' if @user.bars.empty?
 		erb :'/bars/index'
 	end
 
@@ -18,6 +19,7 @@ class BarsController < ApplicationController
 
 
 	get '/bars/:id' do
+		@user = User.find_by_id(session[:user_id])
 		@bar = Bar.find_by_id(params[:id])
 		erb :"/bars/show"
 	end

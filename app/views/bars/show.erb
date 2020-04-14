@@ -9,9 +9,10 @@
 	</ul>
 <% end %>
 
-<a href="/bars/<%=@bar.id%>/edit">Edit Bar</a>
+<a href="/bars/<%=@bar.id%>/edit">Edit Bar</a><br>
+<a href="/bars">Go To All Bars</a><br><br>
 
 <form action="/bars/<%=@bar.id%>/delete" method="POST">
 	<input id="hidden" type="hidden" name="_method" value="delete">
-	<input type="submit" value="Delete Tweet">
+	<input type="submit" value="Delete Bar">
 </form>

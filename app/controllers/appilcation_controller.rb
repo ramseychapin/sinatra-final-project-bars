@@ -11,13 +11,19 @@ class ApplicationController < Sinatra::Base
 
 
 	get '/' do
-		redirect "/users/:id" if logged_in?
+		redirect_if_logged_in("/bars")
 		erb :index
 	end
 
 	helpers do
 
-		def redirect_login_check(redirect_url)
+		def redirect_if_logged_in(redirect_url)
+			if logged_in?
+				redirect redirect_url
+			end
+		end
+
+		def redirect_if_not_logged_in(redirect_url)
 			if !logged_in?
 				redirect redirect_url
 			end

@@ -1,11 +1,16 @@
-<h2>Here are all of your bars!</h2>
+<h2>Welcome to Your Bar Profile!</h2>
 
-<% @bars.each do |bar| %>
-	Name: <%= bar.name %><br>
-	Address: <%= bar.address %><br>
-	<br>
-	<a href="/bars/<%=bar.id%>/edit">Edit</a>
-	<br>
-	<br>
-
+<h3>Here are all of your favorite drinks by bar:</h3>
+<% @user.bars.each do |bar| %>
+	<a href='/bars/<%= bar.id %>'><%= bar.name %>
+	<% bar.drinks.each do |drink| %>
+		<ul>
+			<li>
+				<a href='/drinks/<%= drink.id %>'><%= drink.name %></a>
+			</li>
+		</ul>
+	<% end %>
 <% end %>
+
+<a href="/bars/new">Add A New Bar</a><br><br>
+<a href="/drink/new">Add A New Drink</a><br><br>

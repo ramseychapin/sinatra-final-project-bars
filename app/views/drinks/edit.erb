@@ -1,8 +1,10 @@
 <h1> Edit <%= @drink.name %></h1>
 
 <form action="/drinks/<%=@drink.id%>" method="POST">
+	<input id="hidden" type="hidden" name="_method" value="PATCH">
+
 	<label name="drink_name">Drink Name</label>
 	<input type="text" name="name" value="<%= @drink.name %>">
 
-	<input type="submit" value="submit">
+	<input type="submit" value="Submit">
 </form>
