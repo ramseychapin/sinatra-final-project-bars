@@ -1,0 +1,10 @@
+<h1><%= @drink.name %></h1>
+
+<h2><%= @drink.bar.name %></h2>
+
+<a href="/drinks/<%=@drink.id%>/edit">Edit Drink</a>
+
+<form action="/drinks/<%=@drink.id%>/delete" method="POST">
+	<input id="hidden" type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete Tweet">
+</form>

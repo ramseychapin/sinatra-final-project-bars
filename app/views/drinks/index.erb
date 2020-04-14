@@ -1,0 +1,11 @@
+<h2>Here are all of your drinks!</h2>
+
+<% @user.drinks.each do |drink| %>
+	Name: <%= drink.name %><br>
+	Bar Name: <%= drink.bar.name %><br>
+	<br>
+	<a href="/drinks/<%=drink.id%>/edit">Edit</a>
+	<br>
+	<br>
+
+<% end %>
