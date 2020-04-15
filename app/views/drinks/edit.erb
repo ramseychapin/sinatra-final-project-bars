@@ -4,11 +4,11 @@
 	<input id="hidden" type="hidden" name="_method" value="PATCH">
 
 	<label name="drink_name">Drink Name</label>
-	<input type="text" name="drink[name]" value="<%= @drink.name %>">
+	<input type="text" name="drink[name]" value="<%= @drink.name %>"><br><br>
 
 	<label name="bar">Assign to a Bar</label><br>
 	<% @bars.each do |bar| %>
-		<input id="<%=bar.name %>" type="radio" name="bar" value="<%=bar.id%>"><%= bar.name %></input><br>
+		<input id="<%=bar.name %>" type="radio" name="bar" value="<%=bar.id%>"<%='checked' if bar.drinks.include?(@drink) %>><%=bar.name%></input><br>
 	<% end %>
 
 	<input type="submit" value="Submit">

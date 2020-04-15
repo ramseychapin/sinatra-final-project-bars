@@ -29,6 +29,7 @@ class DrinksController < ApplicationController
 	get '/drinks/:id/edit' do
 		redirect_if_not_logged_in("/")
 		@drink = Drink.find_by_id(params[:id])
+		@bars = current_user.bars
 		erb :"/drinks/edit"
 	end
 

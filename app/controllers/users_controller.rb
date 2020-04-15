@@ -30,7 +30,6 @@ class UsersController < ApplicationController
 		end
 	end
 
-
 	get '/logout' do
 		redirect_if_logged_in("/bars")
 		erb :'/users/logout'
@@ -44,11 +43,10 @@ class UsersController < ApplicationController
 		redirect '/login'
 	end
 
-
 	get '/users/:id' do
 		redirect_if_not_logged_in('/')
 		@user = User.find_by_id(session[:user_id])
-		
+
 		erb :"/users/show"
 	end
 
