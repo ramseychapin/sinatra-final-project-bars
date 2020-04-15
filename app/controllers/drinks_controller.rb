@@ -8,13 +8,15 @@ class DrinksController < ApplicationController
 
 
 	post '/drinks' do
-		@drink = Drink.create(params)
-		#need to persist to user
+		@drink = Drink.create(name: params[:name], ingredients: params[:ingredients])
+		@bar = Bar.find_by_id(params[:bar])
+		@bar.drinks << @drink
 		redirect '/'
 	end
 
 	get '/drinks/new' do
 		redirect_if_not_logged_in("/")
+		@bars = current_user.bars
 		erb :"/drinks/new"
 	end
 
