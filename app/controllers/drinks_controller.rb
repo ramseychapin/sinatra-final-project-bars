@@ -31,8 +31,8 @@ class DrinksController < ApplicationController
 	end
 
 	patch '/drinks/:id' do
-		@drink = Bar.find_by_id(params[:id])
-		@drink.update(params)
+		@drink = Drink.find_by_id(params[:id])
+		@drink.update(params[:drink])
 		redirect "/drinks/#{@drink.id}"
 	end
 

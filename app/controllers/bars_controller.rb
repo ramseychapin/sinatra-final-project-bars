@@ -8,8 +8,10 @@ class BarsController < ApplicationController
 	end
 
 	post '/bars' do
+		@user = User.find_by_id(session[:user_id])
 		@bar = Bar.create(params[:bar])
 		@bar.drinks << Drink.create(params[:drink])
+		@user.bars << @bar
 		redirect "/bars/#{@bar.id}"
 	end
 
