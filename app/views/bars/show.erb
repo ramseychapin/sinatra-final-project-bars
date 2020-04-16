@@ -9,6 +9,13 @@
 	</ul>
 <% end %>
 
+<h3>Bartender Name: <%= @bar.bartender_name %> </h3>
+
+<h4>Address: <%= @bar.address %> </h4>
+<h4>Website: <%= @bar.website %> </h4>
+<h4>Last Time Visited: <%= @bar.last_time_visited %> </h4>
+
+
 <a href="/bars/<%=@bar.id%>/edit">Edit Bar</a><br>
 <a href="/bars">Go To All Bars</a><br><br>
 

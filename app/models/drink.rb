@@ -4,5 +4,6 @@ class Drink < ActiveRecord::Base
 	include Slugifiable::InstanceMethods
 
 	belongs_to :bar
+	validates_presence_of :name, :message => "Make sure to at least add a name!!"
 	
 end

@@ -5,5 +5,6 @@ class Bar < ActiveRecord::Base
 
 	belongs_to :user
 	has_many :drinks
+	validates_presence_of :name, :message => "Make sure to at least add a name!!"
 
 end

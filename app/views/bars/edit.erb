@@ -3,14 +3,20 @@
 <form action="/bars/<%=@bar.id%>" method="POST">
 	<input id="hidden" type="hidden" name="_method" value="PATCH">
 
-	<label name="bar_name">Bar Name</label>
+	<label name="bar_name">Name</label>
 	<input type="text" name="bar[name]" value="<%= @bar.name %>">
 
-	<label name="bar_name">Bar Address</label>
-	<input type="text" name="bar[address]" value="<%= @bar.address %>">
+	<label name="bar_name">Last Time Visited</label>
+	<input type="date" name="bar[last_time_visited]" id="last_time_visited" value="<%= @bar.last_time_visited %>"><br>
 
 	<label name="bar_name">Bartender Name</label>
 	<input type="text" name="bar[bartender_name]" value="<%= @bar.bartender_name %>">
+
+	<label name="bar_name">Address</label>
+	<input type="text" name="bar[address]" value="<%= @bar.address %>">
+
+	<label name="bar_">Website</label>
+	<input type="text" name="bar[website]" value="<%= @bar.website %>">
 
 	<input type="submit" value="Submit">
 </form>

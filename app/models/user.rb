@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	include Slugifiable::InstanceMethods
 
 	has_secure_password
-	validates_presence_of :username, :email, :password_digest
+	validates_presence_of :username, :email, :password_digest, :message => "Make sure these fields aren't empty!"
 
 	has_many :bars
 	has_many :drinks, through: :bars
