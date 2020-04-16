@@ -1,7 +1,13 @@
-# sinatra-final-project-bars
-FInal Sinatra Project
+# Final Sinatra Project
 
+Clone the repo:
 
--Download / pull from github
--Run bundle install (see gems in rakefile)
--Run "shotgun" in terminal to run server locally
+    git clone git@github.com:ramseychapin/sinatra-final-project-bars.git
+
+Install packages:
+
+    bundle install
+
+Run the local server:
+
+    shotgun
