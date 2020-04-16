@@ -4,7 +4,7 @@ Specs:
 - [x] Use Sinatra to build the app
 - [x] Use ActiveRecord for storing information in a database - All of the configuration for ActiveRecord enabled just as we have been donig the entire course.
 
-- [ ] Include more than one model class (e.g. User, Post, Category) - Includes three categories, User, Bar, Drink. While I was going back and forth between letting the user have many drinks, it made sense at the end of the day to keep it simple and only like *favorite* drinks through bars for now.
+- [x] Include more than one model class (e.g. User, Post, Category) - Includes three categories, User, Bar, Drink. While I was going back and forth between letting the user have many drinks, it made sense at the end of the day to keep it simple and only like *favorite* drinks through bars for now.
 
 - [x] Include at least one has_many relationship on your User model (e.g. User has_many Posts) - For these favorite bars and drinks, a User has many of her favorite Bars, and those Bars have many favorite Drinks, so you can go back and try them again!
 
@@ -18,7 +18,7 @@ Specs:
 
 - [x] Include user input validations - included at the model level
 
-- [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+- [x] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
 
 - [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code - INcluded the MIT license as promised
 
